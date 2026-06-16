@@ -33,7 +33,7 @@ class LibroDAO:
         VALUES (%s,%s,%s,%s)
         """
         #Los vaores que se pongam encursor seran iguales a los parametros que ingresamo
-        cusor.execute(
+        cursor.execute(
             sql,
             (libro.titulo,
             libro.autor,
@@ -43,7 +43,7 @@ class LibroDAO:
 
         conexion.commit()
         cursor .close()
-        conexion.clse()
+        conexion.close()
 
     def actualizar (self,libro):
         conexion = conexion.obtener_conexion()
