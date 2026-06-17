@@ -9,14 +9,14 @@ def main():
 
         print("=== Libros en biblioteca ===")
 
-        if len(libro)== 0:
+        if len(libros)== 0:
             prin("No hay libros.")
 
         else:
             for libro in libros:
                 print("=================")
                 print(
-                f"ID:{libro.id}, Titulo:{liro.titulo},"
+                f"ID:{libro.id}, Titulo:{libro.titulo},"
                 f"Autor: {libro.autor}, ISBN: {libro.isbn},"
                 f"Disponible: {'si'if libro.disponible else 'NO'}"
                 )

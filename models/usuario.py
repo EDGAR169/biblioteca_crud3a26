@@ -4,7 +4,7 @@ class Usuario:
     def __init__(self,id_usuario,nombre,email,carrera):
         self.id_usuario = id_usuario
         self.nombre = nombre 
-        selft.matricula = matricula
+        self.matricula = matricula
         self.email = email 
         self.carrera = carrera
         self.activo = True 

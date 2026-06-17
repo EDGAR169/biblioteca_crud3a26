@@ -1,12 +1,12 @@
 class Libro:
 
 
-    def __init__(self, id_libro,titulo,autor,isbn):
-        self.id_libro = id_libro
-        self.tiulo = titulo
+    def __init__(self,id,titulo,autor,isbn,disponible):
+        self.id = id 
+        self.titulo = titulo
         self.autor = autor
         self.isbn = isbn
-        self.disponible = True
+        self.disponible = disponible
 
     def prestar(self):
         if self.disponible:
@@ -17,4 +17,4 @@ class Libro:
         self.disponible = True     
 
     def mostrar_info(self):
-        return f"Libro ID: {self.od_libro},Titulo:{self.titulo},Autor:{self.autor},isbn{self.isbn} "     
+        return f"Libro ID: {self.id_libro},Titulo:{self.titulo},Autor:{self.autor},isbn{self.isbn} "     
