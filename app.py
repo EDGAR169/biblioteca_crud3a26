@@ -30,17 +30,17 @@ def  ver_libros():
 
 
 def insertar_libro():
-    tiulo= imput("Escribe el titulo del nuevo libro:")
+    titulo= input("Escribe el titulo del nuevo libro:")
     autor = int (input("Escribe el id del autor:"))
     isbn = input("Escribe el isbn del nuevo libro:")
     disponible = True
     try:
         libro_dao = LibroDAO()
-        id = libro_dao.obtener_ultimo_id()+ 1
-        libro = Libro(id,titulo,autor,isbm,disponible)
-        libro_dao.insert(libro)
+        id = libro_dao.obtener_ultimo_id() + 1
+        libro = Libro(id,titulo,autor,isbn,disponible)
+        libro_dao.insertar(libro)
         print("Inserción realizada con éxito")
-    except Exeption as e:
+    except Exception as e:
         print("Error al insertar nuevo libro")
         print(e)
 
@@ -57,7 +57,7 @@ def main():
         case 1:
             ver_libros()
         case 2:
-            insertar_libros()
+            insertar_libro()
         case 3: 
             actualizar_libro()
         case 4: 

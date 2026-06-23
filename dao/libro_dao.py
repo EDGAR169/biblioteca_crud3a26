@@ -41,14 +41,15 @@ class LibroDAO:
         #Los vaores que se pongam encursor seran iguales a los parametros que ingresamo
         cursor.execute(
             sql,
-            (libro.titulo,
+            (libro.id,
+            libro.titulo,
             libro.autor,
             libro.isbn,
             libro.disponible)
         )
 
         conexion.commit()
-        cursor .close()
+        cursor.close()
         conexion.close()
 
     def actualizar (self,libro):
@@ -84,17 +85,16 @@ class LibroDAO:
         cursor.close()
         conexion.close()
 
-def obtener_ultimo_id(self):
-    conexion = Conexion.obtener_conexion()
-    cursor = conexion.cursor()
+    def obtener_ultimo_id(self):
+        conexion = Conexion.obtener_conexion()
+        cursor = conexion.cursor()
 
-    cursor.execute("SELECT id FROM libro ORDER BY id DESC")
-    resultado = cursor.fetchone ()
-
-    cursor.close()
-    conexion.close()
+        cursor.execute("SELECT id FROM libro ORDER BY id DESC")
+        resultado = cursor.fetchone ()
+        cursor.close()
+        conexion.close()
     
 
-    if resultado is None:
-        return 0
-    return resultado [0]
+        if resultado is None:
+           return 0
+        return resultado [0]
