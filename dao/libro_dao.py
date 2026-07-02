@@ -41,11 +41,11 @@ class LibroDAO:
         #Los vaores que se pongam encursor seran iguales a los parametros que ingresamo
         cursor.execute(
             sql,
-            (libro.id,
-            libro.titulo,
+            (libro.titulo,
             libro.autor,
             libro.isbn,
-            libro.disponible)
+            libro.disponible,
+            libro.id)
         )
 
         conexion.commit()
