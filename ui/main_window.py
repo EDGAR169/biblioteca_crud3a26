@@ -11,7 +11,7 @@ def main_window(page: ft.Page):
     titulo = ft.Text(
         "Sistema de Biblioteca Universitaria",
         size = 24,
-        weight = ft.FontW.BOLD)
+        weight = ft.FontWeight.BOLD)
 
     subtitulo = ft.Text (
         "Selecciona una opcion de menú",
@@ -50,24 +50,24 @@ def main_window(page: ft.Page):
                 ),
                 ft.Divider(color = ft.Colors.BLUE_GREY_700,),
                 ft.ElevatedButton(
-                    text = "Libros",
+                    "Libros",
                     icon = ft.Icons.BOOK,
                     width  = 180,
                 ),
                 ft.ElevatedButton(
-                    text = "Usuarios",
+                    "Usuarios",
                     icon = ft.Icons.PERSON,
                     width  = 180,
                 ),
                 ft.ElevatedButton(
-                    text = "Prestamo",
+                    "Prestamo",
                     icon = ft.Icons.SWAP_HORIZ,
                     width  = 180,
                 ),
                 ft.ElevatedButton(
-                    text = "Devoluciones",
+                    "Devoluciones",
                     icon = ft.Icons.KEYBOARD_RETURN,
-                    width  = 180,
+                    width  = 180, 
                 ),
                 
             ],

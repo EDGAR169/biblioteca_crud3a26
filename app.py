@@ -1,3 +1,7 @@
+import flet as ft
+
+from ui.main_window import main_window
+
 from dao.libro_dao import LibroDAO
 from models.libro import Libro
 #=======================================
@@ -194,26 +198,29 @@ def menu_usuarios():
         case 3: 
             actualizar_usuarios()
         case 4: 
-            eliminar_usuarios()                  
+            eliminar_usuarios()  
 
-def main():
-    print("===BIBLIOTECA UNIVERSAL===")
-    print("Menú de opciones")
-    print("1. Gestión de libros")
-    print("2. Gestionar usuarios")
 
-    try:
-        opcion = int(input("Selecciona una opcion genral (1-2)"))
-        match opcion:
-            case 1:
-                 menu_libros()
-            case 2:
-                menu_usuarios()
-            case 3: 
-                print("opcion no valida.")
+ft.app(target = main_window)                
 
-    except ValueError:
-        print("porfaor introdusca un numero valido.")
+# def main():
+#     print("===BIBLIOTECA UNIVERSAL===")
+#     print("Menú de opciones")
+#     print("1. Gestión de libros")
+#     print("2. Gestionar usuarios")
+
+#     try:
+#         opcion = int(input("Selecciona una opcion genral (1-2)"))
+#         match opcion:
+#             case 1:
+#                  menu_libros()
+#             case 2:
+#                 menu_usuarios()
+#             case 3: 
+#                 print("opcion no valida.")
+
+#     except ValueError:
+#         print("porfaor introdusca un numero valido.")
 
 
 
@@ -224,5 +231,5 @@ def main():
 
     
 
-if __name__ == "__main__":
-    main()            
+# if __name__ == "__main__":
+#     main()            
