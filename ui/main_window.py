@@ -1,4 +1,5 @@
 import flet as ft
+from ui.libro_form import libro_form  
 
 def main_window(page: ft.Page):
     page.title = "Sistema de Biblioteca Universitaria"
@@ -11,7 +12,9 @@ def main_window(page: ft.Page):
     titulo = ft.Text(
         "Sistema de Biblioteca Universitaria",
         size = 24,
-        weight = ft.FontWeight.BOLD)
+        weight = ft.FontWeight.BOLD,
+        color = ft.Colors.BLUE_GREY_800)
+      
         
 
     subtitulo = ft.Text (
@@ -31,6 +34,11 @@ def main_window(page: ft.Page):
         padding = 30,
         expand = True
     )
+#=======Reacciona al click del boton libros en el menu lateral
+    def insertar_libros(e):
+        contenido.content = libro_form()
+        page.update()
+#======= se ejecuta cuando demos click en libros en la importavion que hicimos (libro_ form)
 
     menu_lateral = ft.Container (
         width = 220,
@@ -54,6 +62,7 @@ def main_window(page: ft.Page):
                     "Libros",
                     icon = ft.Icons.BOOK,
                     width  = 180,
+                    on_click = insertar_libros # "()"; Formzar obligatoria mente a forzar libros, sin los parentesis la funcion es opcional
                 ),
                 ft.ElevatedButton(
                     "Usuarios",
