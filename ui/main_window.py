@@ -12,6 +12,7 @@ def main_window(page: ft.Page):
         "Sistema de Biblioteca Universitaria",
         size = 24,
         weight = ft.FontWeight.BOLD)
+        
 
     subtitulo = ft.Text (
         "Selecciona una opcion de menú",
@@ -82,5 +83,5 @@ def main_window(page: ft.Page):
         ],
         expand = True
     )
-    page.add(layaud) #poner para ver la interfaz 
+    page.add(layaut) #poner para ver la interfaz 
 
