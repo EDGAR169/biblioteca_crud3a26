@@ -24,22 +24,39 @@ def main_window(page: ft.Page):
         )
     #Widget Container
     contenido = ft.Container (
-        content = ft.Column(
+       
+        padding = 30,
+        expand = True,
+        bgcolor = ft.Colors.WHITE
+    )
+#=======Reacciona al click del boton libros en el menu lateral
+  
+#======= se ejecuta cuando demos click en libros en la importavion que hicimos (libro_ form)
+
+
+    
+    def inicio():
+        return ft.Column (
             controls = [
                 titulo,
                 subtitulo
             ],
             spacing = 10
-        ),
-        padding = 30,
-        expand = True
-    )
-#=======Reacciona al click del boton libros en el menu lateral
-    def insertar_libros(e):
-        contenido.content = libro_form()
-        page.update()
-#======= se ejecuta cuando demos click en libros en la importavion que hicimos (libro_ form)
+        )
 
+    def mostrar_inicio (e = None):
+        contenido.content = inicio()
+        page.update()
+
+
+    def mostrar_insertar_libros(e):
+        contenido.content = libro_form(mostrar_inicio)
+        page.update()
+
+    
+
+
+#===============================================0
     menu_lateral = ft.Container (
         width = 220,
         bgcolor = ft.Colors.BLUE_GREY_900,
@@ -57,12 +74,21 @@ def main_window(page: ft.Page):
                     size = 12,
                     color = ft.Colors.BLUE_GREY_100
                 ),
+                
+
+
                 ft.Divider(color = ft.Colors.BLUE_GREY_700,),
+                ft.ElevatedButton(
+                    "Inicio",
+                    icon = ft.Icons.HOME,
+                    width = 180,
+                    on_click = mostrar_inicio
+                ),
                 ft.ElevatedButton(
                     "Libros",
                     icon = ft.Icons.BOOK,
                     width  = 180,
-                    on_click = insertar_libros # "()"; Formzar obligatoria mente a forzar libros, sin los parentesis la funcion es opcional
+                    on_click = mostrar_insertar_libros # "()"; Formzar obligatoria mente a forzar libros, sin los parentesis la funcion es opcional
                 ),
                 ft.ElevatedButton(
                     "Usuarios",
@@ -93,4 +119,6 @@ def main_window(page: ft.Page):
         expand = True
     )
     page.add(layaut) #poner para ver la interfaz 
+
+    mostrar_inicio()
 
